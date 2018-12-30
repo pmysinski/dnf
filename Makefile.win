@@ -1,28 +1,30 @@
 # Project: dnf_3
-# Makefile created by Dev-C++ 5.6.3
+# Makefile created by Dev-C++ 4.9.9.2
 
-CPP      = g++.exe
-CC       = gcc.exe
-WINDRES  = windres.exe
-OBJ      = program.o dnf.o
-LINKOBJ  = program.o dnf.o
-LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib"
-INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
-CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
-BIN      = dnf.exe
-CXXFLAGS = $(CXXINCS) 
-CFLAGS   = $(INCS) 
-RM       = rm.exe -f
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = program.o dnf.o $(RES)
+LINKOBJ  = program.o dnf.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = dnf.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: all-before $(BIN) all-after
+all: all-before dnf.exe all-after
+
 
 clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+	$(CPP) $(LINKOBJ) -o "dnf.exe" $(LIBS)
 
 program.o: program.cpp
 	$(CPP) -c program.cpp -o program.o $(CXXFLAGS)

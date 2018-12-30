@@ -119,7 +119,10 @@
 					f[i] = -1;
              
          }
-         
+         cout << "Cechy: ";
+         for(int i=0;i<kolumny-1;i++)
+        	 cout << f[i] << " ";
+         cout << "\n";
          double max = f[0];
          int index = 0;
          
